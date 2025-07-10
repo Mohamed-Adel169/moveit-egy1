@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  line-height: 1.7;
+  direction: rtl;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.hero {
+  background-color: #0077cc;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.logo {
+  width: 80px;
+  margin-bottom: 10px;
+  animation: zoomIn 1s ease forwards;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.services {
+  list-style: none;
+  background: #fff;
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.services li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.services li:last-child {
+  border-bottom: none;
+}
+
+.features {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.features ul {
+  list-style: disc;
+  margin-right: 20px;
+  padding-top: 10px;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px 0 10px;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+.footer .social-icons {
+  margin-top: 20px;
+}
+
+.footer .social-icons a {
+  font-size: 26px;
+  margin: 0 10px;
+  transition: all 0.4s ease;
+  display: inline-block;
+}
+
+/* تأثير hover مخصص لكل أيقونة */
+.footer .social-icons a.facebook:hover {
+  color: #1877f2;
+  transform: scale(1.3) rotate(-5deg);
+}
+
+.footer .social-icons a.whatsapp:hover {
+  color: #25d366;
+  transform: scale(1.3) rotate(5deg);
+}
+
+.footer .social-icons a.tiktok:hover {
+  color: #000;
+  transform: scale(1.3) rotate(-5deg);
+}
+
+.footer .social-icons a.instagram:hover {
+  color: #e1306c;
+  transform: scale(1.3) rotate(5deg);
+}
+
+
+.footer .social-icons a:hover {
+  color: #005999;
+  transform: scale(1.2);
+}
+
+/* ====== Animation Styles ====== */
+.animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  animation: float 1s ease-in-out infinite;
+}
