@@ -154,7 +154,7 @@ h1 {
   background-color: #e0f0ff;
   color: #004080;
   padding: 15px 20px;
- margin: 30px auto 30px 2px;
+  margin-top: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
   display: flex;
@@ -165,9 +165,13 @@ h1 {
   font-size: 1.1rem;
   font-weight: 500;
   animation: pulse 2s infinite;
-  max-width: 90%;       
-  width: fit-content;  
 }
+
+.license-highlight i {
+  font-size: 1.6rem;
+  color: #007bff;
+}
+
 
 .license-highlight i {
   font-size: 2rem;
@@ -185,3 +189,4 @@ h1 {
     opacity: 0.95;
   }
 }
+
