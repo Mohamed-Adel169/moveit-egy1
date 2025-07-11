@@ -8,22 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.1
-  });
-
-  elements.forEach(el => observer.observe(el));
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll('.animate');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
   }, { threshold: 0.1 });
 
   elements.forEach(el => observer.observe(el));
@@ -56,12 +40,5 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       alert("من فضلك املأ كل البيانات.");
     }
-  });
-});
-
-
-    const message = `الاسم: ${name}%0Aرقم الهاتف: ${phone}%0Aنوع العربية: ${type}`;
-    const whatsappURL = `https://wa.me/201013474771?text=${message}`;
-    window.open(whatsappURL, "_blank");
   });
 });
