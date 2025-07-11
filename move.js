@@ -31,11 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const phone = document.getElementById("phone").value.trim();
     const type = document.getElementById("type").value;
 
-    // تأكد إن كل حاجة دخلت فعلاً
     if (name && phone && type) {
-    const message = `طلب جديد:\nالاسم: ${name}\nرقم الهاتف: ${phone}\nنوع العربية: ${type}`;
+      const message = `طلب جديد:\n👤 الاسم: ${name}\n📞 رقم الهاتف: ${phone}\n🚛 نوع العربية: ${type}`;
       const encodedMessage = encodeURIComponent(message);
-      const whatsappURL = https://wa.me/201013474771?text=${encodedMessage};
+      const whatsappURL = `https://wa.me/201013474771?text=${encodedMessage}`;
       window.open(whatsappURL, "_blank");
     } else {
       alert("من فضلك املأ كل البيانات.");
