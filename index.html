@@ -35,8 +35,23 @@
               <i class="fas fa-id-card"></i>
   <p>احنا الجهة الوحيدة اللي بتوفرلك <strong>رخصة نقل رسمية من المرور</strong>  !</p>
 </div>
-
       </ul>
+      <!-- زرار التسجيل -->
+<button class="open-form-btn" onclick="openForm()">سجل دلوقتي</button>
+
+<!-- الفورم المخفي -->
+<div class="popup-form" id="popupForm">
+  <div class="form-content">
+    <span class="close-btn" onclick="closeForm()">&times;</span>
+    <h2>سجّل بياناتك</h2>
+    <input type="text" id="name" placeholder="الاسم بالكامل" required>
+    <input type="text" id="phone" placeholder="رقم الموبايل" required>
+    <input type="text" id="service" placeholder="نوع الرخصة" required>
+    <textarea id="notes" placeholder="ملاحظات إضافية (اختياري)"></textarea>
+    <button onclick="sendToWhatsApp()">تم</button>
+  </div>
+</div>
+
     </section>
 
     <footer class="footer animate">
