@@ -14,31 +14,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   elements.forEach(el => observer.observe(el));
 });
-<script>
-  function openForm() {
-    document.getElementById("popupForm").style.display = "flex";
-  }
+// تسجيل الزر و الفورم
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll('.animate');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  elements.forEach(el => observer.observe(el));
 
-  function closeForm() {
-    document.getElementById("popupForm").style.display = "none";
-  }
+  const openFormBtn = document.getElementById("openFormBtn");
+  const formPopup = document.getElementById("registrationForm");
+  const closeBtn = document.getElementById("closeForm");
 
-  function sendToWhatsApp() {
+  openFormBtn.addEventListener("click", () => {
+    formPopup.classList.add("show");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    formPopup.classList.remove("show");
+  });
+
+  document.getElementById("formData").addEventListener("submit", function (e) {
+    e.preventDefault();
+
     const name = document.getElementById("name").value.trim();
     const phone = document.getElementById("phone").value.trim();
-    const service = document.getElementById("service").value.trim();
-    const notes = document.getElementById("notes").value.trim();
+    const type = document.getElementById("type").value;
 
-    if (!name || !phone || !service) {
-      alert("من فضلك املأ الحقول المطلوبة.");
-      return;
-    }
-
-    const message = `الاسم: ${name}%0aرقم الموبايل: ${phone}%0aنوع الرخصة: ${service}%0aملاحظات: ${notes}`;
-    const ownerNumber = "2010XXXXXXXX"; // ← ← ← غير ده لرقمك واتساب بدون +
-
-    const whatsappURL = `https://wa.me/${ownerNumber}?text=${message}`;
-    window.open(whatsappURL, '_blank');
-    closeForm();
-  }
-</script>
+    const message = `الاسم: ${name}%0Aرقم الهاتف: ${phone}%0Aنوع العربية: ${type}`;
+    const whatsappURL = `https://wa.me/201013474771?text=${message}`;
+    window.open(whatsappURL, "_blank");
+  });
+});
