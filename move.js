@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const type = document.getElementById("type").value;
 
     if (name && phone && type) {
-      const message = `طلب جديد:\n👤 الاسم: ${name}\n📞 رقم الهاتف: ${phone}\n🚛 نوع العربية: ${type}`;
+      const message = `New Request:\n👤 Name: ${name}\n📞 Phone: ${phone}\n🚛 Vehicle Type: ${type}`;
       const encodedMessage = encodeURIComponent(message);
       const whatsappURL = `https://wa.me/201013474771?text=${encodedMessage}`;
       window.open(whatsappURL, "_blank");
