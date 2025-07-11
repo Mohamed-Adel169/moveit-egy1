@@ -66,6 +66,30 @@
 
     </footer>
   </main>
+<!-- زر التسجيل -->
+<button id="openFormBtn" class="register-btn">سجل دلوقتي</button>
+
+<!-- الفورم -->
+<div class="form-popup" id="registrationForm">
+  <form id="formData">
+    <h2>سجّل بياناتك</h2>
+    <label for="name">الاسم</label>
+    <input type="text" id="name" required>
+
+    <label for="phone">رقم الهاتف</label>
+    <input type="tel" id="phone" required>
+
+    <label for="type">نوع العربية</label>
+    <select id="type" required>
+      <option value="أكل">عربية أكل</option>
+      <option value="خيول">عربية خيول</option>
+      <option value="موتسيكلات">عربية موتسيكلات</option>
+    </select>
+
+    <button type="submit" class="submit-btn">تم</button>
+    <span id="closeForm" class="close-btn">&times;</span>
+  </form>
+</div>
 
 </body>
 </html>
