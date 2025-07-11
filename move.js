@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // تأكد إن كل حاجة دخلت فعلاً
     if (name && phone && type) {
-      const message = `👋 مرحبًا، تم تسجيل طلب جديد:\n\n👤 الاسم: ${name}\n📱 رقم الهاتف: ${phone}\n🚚 نوع العربية: ${type}`;
+      const message = 👋 مرحبًا، تم تسجيل طلب جديد:\n\n👤 الاسم: ${name}\n📱 رقم الهاتف: ${phone}\n🚚 نوع العربية: ${type};
       const encodedMessage = encodeURIComponent(message);
-      const whatsappURL = `https://wa.me/201013474771?text=${encodedMessage}`;
+      const whatsappURL = https://wa.me/201013474771?text=${encodedMessage};
       window.open(whatsappURL, "_blank");
     } else {
       alert("من فضلك املأ كل البيانات.");
