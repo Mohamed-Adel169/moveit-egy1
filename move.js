@@ -43,13 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-.animate-truck {
-  opacity: 0;
-  transform: translateX(100px);
-  transition: all 1s ease-in-out;
-}
-
-.animate-truck.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const truck = document.querySelector('.animate-truck');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        truck.classList.add('visible');
+      }
+    });
+  });
+  observer.observe(truck);
+});
