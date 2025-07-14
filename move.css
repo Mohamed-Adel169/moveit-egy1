@@ -31,6 +31,22 @@ body {
   margin: 20px auto 10px auto; 
   width: 150px;
 }
+.food-truck {
+  position: absolute;
+  top: 200px; /* المسافة من فوق */
+  left: -200px; /* تبدأ خارج الشاشة */
+  width: 120px;
+  animation: drive 5s linear infinite;
+}
+
+@keyframes drive {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 100%;
+  }
+}
 
 
 h1 {
