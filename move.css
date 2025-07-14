@@ -28,7 +28,16 @@ body {
   overflow: hidden;   /* ← تمنع خروج اللوجو بره */
 }
 
+.animate-text {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-in-out;
+}
 
+.animate-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .animate-truck {
   max-width: 180px;
