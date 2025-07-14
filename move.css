@@ -38,7 +38,7 @@ body {
 .animate-truck {
   opacity: 0;
   transform: translateX(100px);
-  transition: all 1s ease-in-out;
+  transition: all 2s ease-in-out;
 }
 
 .animate-truck.visible {
