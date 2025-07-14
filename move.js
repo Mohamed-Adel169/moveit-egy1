@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.1 });
 
-  // عناصر الأنيميشن كلها (شاملة الصورة والنص والباقي)
+  // عناصر الأنيميشن كلها
   const animatedElements = document.querySelectorAll('.animate, .animate-truck, .animate-text');
   animatedElements.forEach(el => observer.observe(el));
 
@@ -18,29 +18,35 @@ document.addEventListener("DOMContentLoaded", () => {
   const formPopup = document.getElementById("registrationForm");
   const closeBtn = document.getElementById("closeForm");
 
-  openFormBtn.addEventListener("click", () => {
-    formPopup.classList.add("show");
-  });
+  // تأكد إن الأزرار موجودة قبل إضافة الأحداث
+  if (openFormBtn && formPopup && closeBtn) {
+    openFormBtn.addEventListener("click", () => {
+      formPopup.classList.add("show");
+    });
 
-  closeBtn.addEventListener("click", () => {
-    formPopup.classList.remove("show");
-  });
+    closeBtn.addEventListener("click", () => {
+      formPopup.classList.remove("show");
+    });
+  }
 
   // ==== Form Submission ====
-  document.getElementById("formData").addEventListener("submit", function (e) {
-    e.preventDefault();
+  const form = document.getElementById("formData");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const type = document.getElementById("type").value;
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const type = document.getElementById("type").value;
 
-    if (name && phone && type) {
-      const message = New Request:\n👤 Name: ${name}\n📞 Phone: ${phone}\n🚛 Vehicle Type: ${type};
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappURL = https://wa.me/201013474771?text=${encodedMessage};
-      window.open(whatsappURL, "_blank");
-    } else {
-      alert("من فضلك املأ كل البيانات.");
-    }
-  });
+      if (name && phone && type) {
+        const message = New Request:\n👤 Name: ${name}\n📞 Phone: ${phone}\n🚛 Vehicle Type: ${type};
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = https://wa.me/201013474771?text=${encodedMessage};
+        window.open(whatsappURL, "_blank");
+      } else {
+        alert("من فضلك املأ كل البيانات.");
+      }
+    });
+  }
 });
