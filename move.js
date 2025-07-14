@@ -41,10 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const type = document.getElementById("type").value;
 
       if (name && phone && type) {
-        const message = New Request:\n👤 Name: ${name}\n📞 Phone: ${phone}\n🚛 Vehicle Type: ${type};
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappURL = https://wa.me/201013474771?text=${encodedMessage};
-        window.open(whatsappURL, "_blank");
+      const message = `New Request:\n👤 Name: ${name}\n📞 Phone: ${phone}\n🚛 Vehicle Type: ${type}`;
+const encodedMessage = encodeURIComponent(message);
+const whatsappURL = `https://wa.me/201013474771?text=${encodedMessage}`;
+window.open(whatsappURL, "_blank");
       } else {
         alert("من فضلك املأ كل البيانات.");
       }
