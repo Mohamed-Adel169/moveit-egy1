@@ -54,3 +54,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   observer.observe(truck);
 });
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const truck = document.querySelector('.animate-truck');
+  const text = document.querySelector('.animate-text');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.target.classList.contains('animate-truck') && entry.isIntersecting) {
+        truck.classList.add('visible');
+      }
+      if (entry.target.classList.contains('animate-text') && entry.isIntersecting) {
+        text.classList.add('visible');
+      }
+    });
+  });
+
+  observer.observe(truck);
+  observer.observe(text);
+});
