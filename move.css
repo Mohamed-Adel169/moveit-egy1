@@ -31,22 +31,11 @@ body {
 
 
 .logo {
-  position: absolute;
-  top: 20px;
-  right: -150px;
-  width: 120px;
-  animation: moveLogo 6s linear infinite;
+  max-width: 180px;
+  margin-bottom: 20px;
 }
 
 
-@keyframes moveLogo {
-  0% {
-    right: -150px;
-  }
-  100% {
-    right: 100%;
-  }
-}
 
 
 h1 {
