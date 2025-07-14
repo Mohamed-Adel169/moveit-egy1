@@ -1,89 +1,27 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moveit</title>
-  <link rel="stylesheet" href="move.css">
-  <script defer src="move.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
+document.addEventListener("DOMContentLoaded", () => {
+  // ========== ANIMATION OBSERVER ==========
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
 
-  <header class="hero animate">
-    <div class="container">
-      <img src="imgs/IMG_0585.PNG" alt="Moveit Logo" class="animate-truck">
-      
-    <div class="truck-text animate-text">
-  <h2>Moveit - الجودة تبدأ من هنا!</h2>
-    <p>شركة مصرية متخصصة في تصنيع:</p>
-</div>
-    </div>
-  </header>
+  const animatedElements = document.querySelectorAll('.animate, .animate-truck, .animate-text');
+  animatedElements.forEach(el => observer.observe(el));
 
-  <main class="container">
-    <ul class="services animate">
-      <li>عربات الطعام (<span>Food Trailers</span>)</li>
-      <li>عربات نقل الخيول (<span>Horse Trailers</span>)</li>
-      <li>عربات نقل الدراجات النارية (<span>Motorcycle Trailers</span>)</li>
-    </ul>
+  // ========== FORM BUTTONS ==========
+  const openFormBtn = document.getElementById("openFormBtn");
+  const formPopup = document.getElementById("registrationForm");
+  const closeBtn = document.getElementById("closeForm");
 
-    <section class="features animate">
-      <p>بنقدملك منتجاتنا بتصميمات Trendy وعصرية تناسب كل الأذواق، علشان نساعدك تبدأ مشروعك بشكل يلفت الأنظار!</p>
-      <ul>
-        <li>فريقنا الفني المحترف يهتم بكل تفصيلة في الشغل من أول التصميم لحد التسليم</li>
-        <li>منتجاتنا مصنوعة بأيادي مصرية وبمعايير جودة عالمية</li>
-        <li>بنوفّرلك أسعار مناسبة وتنافسية تقدر تبدأ بيها مشروعك من غير ما تشيل هم التكاليف</li>
-        <div class="license-highlight">
-              <i class="fas fa-id-card"></i>
-  <p>احنا الجهة الوحيدة اللي بتوفرلك <strong>رخصة نقل رسمية من المرور</strong>  !</p>
-</div>
-      </ul>
-  
-    </section>
+  if (openFormBtn && formPopup) {
+    openFormBtn.addEventListener("click", () => {
+      formPopup.classList.add("show");
+    });
+  }
 
-<!-- زر التسجيل -->
-<button id="openFormBtn" class="register-btn">سجل دلوقتي</button>
-
-<!-- الفورم -->
-<div class="form-popup" id="registrationForm">
-  <form id="formData">
-    <h2>سجّل بياناتك</h2>
-    <label for="name">الاسم</label>
-    <input type="text" id="name" required>
-
-    <label for="phone">رقم الهاتف</label>
-    <input type="tel" id="phone" required>
-
-    <label for="type">نوع العربية</label>
-    <select id="type" required>
-      <option value="أكل">عربية أكل</option>
-      <option value="قهوة">عربية قهوة</option>
-      <option value="خيول">عربية خيول</option>
-      <option value="موتسيكلات">عربية موتسيكلات</option>
-    </select>
-
-    <button type="submit" class="submit-btn">تم</button>
-    <span id="closeForm" class="close-btn">&times;</span>
-  </form>
-</div>
-    
-   
- </main>
-
-<footer class="footer animate">
-  <p>
-    مع <strong>Moveit</strong>، مشروعك مش بس بيبدأ... ده بينجح!<br>
-    صنع في مصر 🇪🇬 يفتخر بيه أي عميل
-  </p>
-  <div class="social-icons">
-    <a href="https://www.facebook.com/share/1YtXAk8aS3/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.tiktok.com/@moveit662?_t=ZS-8xvJzx4z7HW&_r=1" target="_blank" aria-label="TikTok" class="tiktok"><i class="fab fa-tiktok"></i></a>
-    <a href="https://www.instagram.com/moveit820?igsh=MTJvMDV6bzUzN28yMQ==" target="_blank" aria-label="Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/201013474771" target="_blank" aria-label="WhatsApp" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-  </div>
-</footer>
-
-</body>
-</html>
-
+  if (closeBtn && formPopup) {
+    closeBtn.addEventListener("click", () => {
