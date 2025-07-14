@@ -41,3 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+.animate-truck {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease-in-out;
+}
+
+.animate-truck.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
