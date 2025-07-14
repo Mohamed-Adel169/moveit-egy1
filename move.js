@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const formPopup = document.getElementById("registrationForm");
   const closeBtn = document.getElementById("closeForm");
 
-  // نتحقق إنهم موجودين الأول
   if (openFormBtn && formPopup) {
     openFormBtn.addEventListener("click", () => {
       formPopup.classList.add("show");
@@ -36,15 +35,25 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const type = document.getElementById("type").value;
+      const nameInput = document.getElementById("name");
+      const phoneInput = document.getElementById("phone");
+      const typeInput = document.getElementById("type");
+
+      // تأكد من وجود العناصر
+      if (!nameInput || !phoneInput || !typeInput) {
+        alert("عنصر مفقود من الصفحة!");
+        return;
+      }
+
+      const name = nameInput.value.trim();
+      const phone = phoneInput.value.trim();
+      const type = typeInput.value;
 
       if (name && phone && type) {
-      const message = `New Request:\n👤 Name: ${name}\n📞 Phone: ${phone}\n🚛 Vehicle Type: ${type}`;
-const encodedMessage = encodeURIComponent(message);
-const whatsappURL = `https://wa.me/201013474771?text=${encodedMessage}`;
-window.open(whatsappURL, "_blank");
+        const message = `New Request:\n👤 Name: ${name}\n📞 Phone: ${phone}\n🚛 Vehicle Type: ${type}`;
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/201013474771?text=${encodedMessage}`;
+        window.open(whatsappURL, "_blank");
       } else {
         alert("من فضلك املأ كل البيانات.");
       }
