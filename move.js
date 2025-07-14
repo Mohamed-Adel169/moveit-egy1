@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ==== Animation Observer ====
+  // ========== ANIMATION OBSERVER ==========
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -9,27 +9,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.1 });
 
-  // عناصر الأنيميشن كلها
   const animatedElements = document.querySelectorAll('.animate, .animate-truck, .animate-text');
   animatedElements.forEach(el => observer.observe(el));
 
-  // ==== Show/Hide Form ====
+  // ========== FORM BUTTONS ==========
   const openFormBtn = document.getElementById("openFormBtn");
   const formPopup = document.getElementById("registrationForm");
   const closeBtn = document.getElementById("closeForm");
 
-  // تأكد إن الأزرار موجودة قبل إضافة الأحداث
-  if (openFormBtn && formPopup && closeBtn) {
+  // نتحقق إنهم موجودين الأول
+  if (openFormBtn && formPopup) {
     openFormBtn.addEventListener("click", () => {
       formPopup.classList.add("show");
     });
+  }
 
+  if (closeBtn && formPopup) {
     closeBtn.addEventListener("click", () => {
       formPopup.classList.remove("show");
     });
   }
 
-  // ==== Form Submission ====
+  // ========== WHATSAPP SEND ==========
   const form = document.getElementById("formData");
   if (form) {
     form.addEventListener("submit", function (e) {
