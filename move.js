@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll('.animate');
-
+  // ==== Animation Observer ====
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -10,8 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.1 });
 
-  elements.forEach(el => observer.observe(el));
+  // عناصر الأنيميشن كلها (شاملة الصورة والنص والباقي)
+  const animatedElements = document.querySelectorAll('.animate, .animate-truck, .animate-text');
+  animatedElements.forEach(el => observer.observe(el));
 
+  // ==== Show/Hide Form ====
   const openFormBtn = document.getElementById("openFormBtn");
   const formPopup = document.getElementById("registrationForm");
   const closeBtn = document.getElementById("closeForm");
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formPopup.classList.remove("show");
   });
 
+  // ==== Form Submission ====
   document.getElementById("formData").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -32,48 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const type = document.getElementById("type").value;
 
     if (name && phone && type) {
-      const message = `New Request:\n👤 Name: ${name}\n📞 Phone: ${phone}\n🚛 Vehicle Type: ${type}`;
+      const message = New Request:\n👤 Name: ${name}\n📞 Phone: ${phone}\n🚛 Vehicle Type: ${type};
       const encodedMessage = encodeURIComponent(message);
-      const whatsappURL = `https://wa.me/201013474771?text=${encodedMessage}`;
+      const whatsappURL = https://wa.me/201013474771?text=${encodedMessage};
       window.open(whatsappURL, "_blank");
     } else {
       alert("من فضلك املأ كل البيانات.");
     }
   });
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const truck = document.querySelector('.animate-truck');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        truck.classList.add('visible');
-      }
-    });
-  });
-  observer.observe(truck);
-});
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const truck = document.querySelector('.animate-truck');
-  const text = document.querySelector('.animate-text');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.target.classList.contains('animate-truck') && entry.isIntersecting) {
-        truck.classList.add('visible');
-      }
-      if (entry.target.classList.contains('animate-text') && entry.isIntersecting) {
-        text.classList.add('visible');
-      }
-    });
-  });
-
-  observer.observe(truck);
-  observer.observe(text);
 });
