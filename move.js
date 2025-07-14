@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const phoneInput = document.getElementById("phone");
       const typeInput = document.getElementById("type");
 
-      // تأكد من وجود العناصر
       if (!nameInput || !phoneInput || !typeInput) {
         alert("عنصر مفقود من الصفحة!");
         return;
