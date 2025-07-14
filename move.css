@@ -30,21 +30,12 @@ body {
 
 
 
-.animate-truck {
+.logo {
   max-width: 180px;
   margin-bottom: 20px;
 }
 
-.animate-truck {
-  opacity: 0;
-  transform: translateX(100px);
-  transition: all 1s ease-in-out;
-}
 
-.animate-truck.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
 
 
 h1 {
