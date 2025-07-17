@@ -369,7 +369,7 @@ h2 {
   text-align: center;
   white-space: nowrap;
   font-size: 15px;
-
+align-self: flex-start;
 }
 
 
@@ -415,5 +415,20 @@ h2 {
   align-items: center;
   padding: 10px 0;
   direction: rtl;
+}
+/*////////////////////////////////////////////////////  */
+/* الموبايل لحد 600px */
+@media (max-width: 600px) {
+  .video-btn {
+    width: 100%; /* ياخد عرض السطر كله */
+    height: 40px;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .service-item {
+    flex-direction: column-reverse; /* الزر يبقى فوق أو تحت */
+    align-items: flex-start;
+  }
 }
 
