@@ -361,7 +361,7 @@ h2 {
   color: white;
   border: none;
   padding: 10px 20px;
-  width: 115px; /* ✅ عرض موحد لكل الأزرار */
+  width: 130px; /* ✅ عرض موحد لكل الأزرار */
   height: 45px;  /* ✅ ارتفاع موحد */
   cursor: pointer;
   border-radius: 8px;
@@ -420,15 +420,18 @@ align-self: flex-start;
 /* الموبايل لحد 600px */
 @media (max-width: 600px) {
   .video-btn {
-    width: 100%; /* ياخد عرض السطر كله */
+    width: 100%; /* الزر ياخد عرض السطر */
     height: 40px;
     font-size: 15px;
     margin-top: 10px;
+    align-self: flex-start;
   }
 
   .service-item {
-    flex-direction: column-reverse; /* الزر يبقى فوق أو تحت */
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column;  /* ✅ الزر تحت الكلام */
+    align-items: flex-start; /* عشان يبقوا على الشمال */
   }
 }
+
 
