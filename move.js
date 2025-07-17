@@ -59,3 +59,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const videoButtons = document.querySelectorAll('.video-btn');
+  const videoPopup = document.getElementById('videoPopup');
+  const videoFrame = document.getElementById('videoFrame');
+  const closePopup = document.getElementById('closePopup');
+
+  videoButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const videoUrl = button.getAttribute('data-video');
+      videoFrame.src = videoUrl;
+      videoPopup.style.display = 'flex';
+    });
+  });
+
+  closePopup.addEventListener('click', () => {
+    videoPopup.style.display = 'none';
+    videoFrame.pause();
+    videoFrame.currentTime = 0;
+    videoFrame.src = '';
+  });
+});
+
+
