@@ -361,7 +361,7 @@ h2 {
   color: white;
   border: none;
   padding: 10px 20px;
-  width: 110px; /* ✅ عرض موحد لكل الأزرار */
+  width: 115px; /* ✅ عرض موحد لكل الأزرار */
   height: 45px;  /* ✅ ارتفاع موحد */
   cursor: pointer;
   border-radius: 8px;
