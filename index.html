@@ -23,10 +23,21 @@
 
   <main class="container">
     <ul class="services animate">
-      <li>عربات الطعام (<span>Food Trailers</span>)</li>
-      <li>عربات نقل الخيول (<span>Horse Trailers</span>)</li>
-      <li>عربات نقل الدراجات النارية (<span>Motorcycle Trailers</span>)</li>
-    </ul>
+  <li class="service-item">
+    <span>عربات الطعام (Food Trailers)</span>
+  
+    <button class="video-btn" data-video="vid/food4.mp4.mov">Watch Video</button>
+  </li>
+  <li class="service-item">
+    <span>عربات نقل الخيول (Horse Trailers)</span>
+    <button class="video-btn" data-video="vid/motor.mp4">Watch Video</button>
+  </li>
+  <li class="service-item">
+    <span>عربات نقل الدراجات النارية (Motorcycle Trailers)</span>
+    <button class="video-btn" data-video="vid/horse.mp4">Watch Video</button>
+  </li>
+</ul>
+
 
     <section class="features animate">
       <p>بنقدملك منتجاتنا بتصميمات Trendy وعصرية تناسب كل الأذواق، علشان نساعدك تبدأ مشروعك بشكل يلفت الأنظار!</p>
@@ -79,6 +90,10 @@
       <a href="https://wa.me/201013474771" target="_blank" aria-label="WhatsApp" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
     </div>
   </footer>
+<div class="video-popup" id="videoPopup">
+  <span class="close-btn" id="closePopup">&times;</span>
+  <video id="videoFrame" controls autoplay></video>
+</div>
 
 </body>
 </html>
